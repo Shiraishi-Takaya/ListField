@@ -9,17 +9,9 @@ class TaskController extends Controller
 {
     public function index()
     {
-        return view('index');
-    }
+        $tasks = User::find(1)->tasks;
 
-    public function show()
-    {
-        $data = User::find(1)->task;
-        return $data;
-    }
-
-    public function create()
-    {
-        
+        return view('index')
+            -> with(['tasks' => $tasks]);
     }
 }

@@ -16,4 +16,4 @@ use App\Http\Controllers\TaskController;
 */
 
 Route::get('/', [TaskController::class, 'index'])
--> name('index');
+    -> name('index');
