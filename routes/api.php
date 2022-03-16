@@ -20,4 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// Route::get('/tasks/show', [TaskController::class, 'show']);
+Route::post('/tasks/create', [TaskController::class, 'create']);
