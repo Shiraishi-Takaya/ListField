@@ -1,0 +1,8 @@
+.task-list {
+    display: flex;
+    list-style-type: none;
+}
+.task-list > li {
+    padding: 4px;
+    border: 1px solid #000;
+}
