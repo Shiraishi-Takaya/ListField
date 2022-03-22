@@ -1,10 +1,10 @@
 require('./bootstrap');
 
 import { createApp } from 'vue';
-import TasksComponent from './components/TasksComponent.vue';
+import ListComponent from './components/ListComponent.vue';
 
 createApp({
     components:{
-        TasksComponent
+        ListComponent
     }
 }).mount('#app');

@@ -4,6 +4,6 @@
     </x-slot>
     <h1>ListField</h1>
     <div id="app">
-        <tasks-component :tasks="{{ $tasks }}"></tasks-component>
+        <list-component :tasks="{{ $tasks }}"></list-component>
     </div>
 </x-layout>
