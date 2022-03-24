@@ -22,10 +22,13 @@ class TaskController extends Controller
         $task->user_id = 1;
         $task->title = $request->title;
         $task->description = $request->description;
-        $task->deadline = $request->deadline;
+        $task->date = $request->date;
+        $task->time = $request->time;
         $task->is_done = false;
-        $task->width = 240;
-        $task->height = 240;
+        $task->x_position = 0;
+        $task->y_position = 0;
+        $task->width = 4;
+        $task->height = 4;
         $task->color = $request->color;
         $task->save();
 

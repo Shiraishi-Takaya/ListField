@@ -2,15 +2,15 @@
     <div>
         <ul class="task-list">
             <li v-for="task in tasks" :key="task">
-                {{ task.title }}
+                {{ task }}
             </li>
         </ul>
     </div>
     <hr>
     <grid-layout
         v-model:layout="layout"
-        :col-num="12"
-        :row-height="30"
+        :col-num="32"
+        :row-height="32"
         :is-draggable="true"
         :is-resizable="true"
         :is-mirrored="false"
@@ -34,7 +34,8 @@
     <div>
         <form @submit.prevent="create">
             <input type="text" placeholder="タイトルを入力" name="title" v-model="newTask.title"><br>
-            <input type="date" name="deadline" v-model="newTask.deadline">
+            <input type="date" name="date" v-model="newTask.date">
+            <input type="time" name="time" v-model="newTask.time">
             <div>
                 <label><input type="radio" name="color" value="0" v-model="newTask.color">0</label>
                 <label><input type="radio" name="color" value="1" v-model="newTask.color">1</label>
@@ -63,14 +64,15 @@ export default {
             newTask: {
                 title: '',
                 description: '',
-                deadline: '',
+                date: '',
+                time: '',
                 color: ''
             },
             layout: [
                 { x: 0, y: 0, w: 2, h: 2, i: "0" },
-                { x: 2, y: 0, w: 2, h: 2, i: "1" },
-                { x: 0, y: 2, w: 2, h: 2, i: "2" },
-                { x: 2, y: 2, w: 2, h: 2, i: "3" },
+                { x: 0, y: 0, w: 2, h: 2, i: "1" },
+                { x: 0, y: 0, w: 2, h: 2, i: "2" },
+                { x: 0, y: 0, w: 2, h: 2, i: "3" },
             ]
         }
     },

@@ -15,8 +15,11 @@ class Task extends Model
         'user_id',
         'title',
         'description',
-        'deadline',
+        'date',
+        'time',
         'is_done',
+        'x_position',
+        'y_position',
         'width',
         'height',
         'color'

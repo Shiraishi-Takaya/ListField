@@ -18,8 +18,11 @@ class CreateTasksTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->string('title');
             $table->text('description')->nullable;
-            $table->date('deadline')->nullable;
+            $table->date('date')->nullable;
+            $table->time('time')->nullable;
             $table->boolean('is_done');
+            $table->integer('x_position');
+            $table->integer('y_position');
             $table->integer('width');
             $table->integer('height');
             $table->integer('color');

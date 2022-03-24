@@ -19281,7 +19281,8 @@ __webpack_require__.r(__webpack_exports__);
       newTask: {
         title: '',
         description: '',
-        deadline: '',
+        date: '',
+        time: '',
         color: ''
       },
       layout: [{
@@ -19291,20 +19292,20 @@ __webpack_require__.r(__webpack_exports__);
         h: 2,
         i: "0"
       }, {
-        x: 2,
+        x: 0,
         y: 0,
         w: 2,
         h: 2,
         i: "1"
       }, {
         x: 0,
-        y: 2,
+        y: 0,
         w: 2,
         h: 2,
         i: "2"
       }, {
-        x: 2,
-        y: 2,
+        x: 0,
+        y: 0,
         w: 2,
         h: 2,
         i: "3"
@@ -19392,7 +19393,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_1, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.tasks, function (task) {
     return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("li", {
       key: task
-    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(task.title), 1
+    }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(task), 1
     /* TEXT */
     );
   }), 128
@@ -19402,8 +19403,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "onUpdate:layout": _cache[0] || (_cache[0] = function ($event) {
       return $data.layout = $event;
     }),
-    "col-num": 12,
-    "row-height": 30,
+    "col-num": 32,
+    "row-height": 32,
     "is-draggable": true,
     "is-resizable": true,
     "is-mirrored": false,
@@ -19442,7 +19443,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }, 8
   /* PROPS */
   , ["layout"]), _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
-    onSubmit: _cache[12] || (_cache[12] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+    onSubmit: _cache[13] || (_cache[13] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
       return $options.create && $options.create.apply($options, arguments);
     }, ["prevent"]))
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
@@ -19456,17 +19457,25 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* NEED_PATCH */
   ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.newTask.title]]), _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "date",
-    name: "deadline",
+    name: "date",
     "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {
-      return $data.newTask.deadline = $event;
+      return $data.newTask.date = $event;
     })
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.newTask.deadline]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.newTask.date]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    type: "time",
+    name: "time",
+    "onUpdate:modelValue": _cache[3] || (_cache[3] = function ($event) {
+      return $data.newTask.time = $event;
+    })
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.newTask.time]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "radio",
     name: "color",
     value: "0",
-    "onUpdate:modelValue": _cache[3] || (_cache[3] = function ($event) {
+    "onUpdate:modelValue": _cache[4] || (_cache[4] = function ($event) {
       return $data.newTask.color = $event;
     })
   }, null, 512
@@ -19475,7 +19484,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     type: "radio",
     name: "color",
     value: "1",
-    "onUpdate:modelValue": _cache[4] || (_cache[4] = function ($event) {
+    "onUpdate:modelValue": _cache[5] || (_cache[5] = function ($event) {
       return $data.newTask.color = $event;
     })
   }, null, 512
@@ -19484,7 +19493,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     type: "radio",
     name: "color",
     value: "2",
-    "onUpdate:modelValue": _cache[5] || (_cache[5] = function ($event) {
+    "onUpdate:modelValue": _cache[6] || (_cache[6] = function ($event) {
       return $data.newTask.color = $event;
     })
   }, null, 512
@@ -19493,7 +19502,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     type: "radio",
     name: "color",
     value: "3",
-    "onUpdate:modelValue": _cache[6] || (_cache[6] = function ($event) {
+    "onUpdate:modelValue": _cache[7] || (_cache[7] = function ($event) {
       return $data.newTask.color = $event;
     })
   }, null, 512
@@ -19502,7 +19511,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     type: "radio",
     name: "color",
     value: "4",
-    "onUpdate:modelValue": _cache[7] || (_cache[7] = function ($event) {
+    "onUpdate:modelValue": _cache[8] || (_cache[8] = function ($event) {
       return $data.newTask.color = $event;
     })
   }, null, 512
@@ -19511,7 +19520,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     type: "radio",
     name: "color",
     value: "5",
-    "onUpdate:modelValue": _cache[8] || (_cache[8] = function ($event) {
+    "onUpdate:modelValue": _cache[9] || (_cache[9] = function ($event) {
       return $data.newTask.color = $event;
     })
   }, null, 512
@@ -19520,7 +19529,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     type: "radio",
     name: "color",
     value: "6",
-    "onUpdate:modelValue": _cache[9] || (_cache[9] = function ($event) {
+    "onUpdate:modelValue": _cache[10] || (_cache[10] = function ($event) {
       return $data.newTask.color = $event;
     })
   }, null, 512
@@ -19529,7 +19538,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     type: "radio",
     name: "color",
     value: "7",
-    "onUpdate:modelValue": _cache[10] || (_cache[10] = function ($event) {
+    "onUpdate:modelValue": _cache[11] || (_cache[11] = function ($event) {
       return $data.newTask.color = $event;
     })
   }, null, 512
@@ -19537,7 +19546,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelRadio, $data.newTask.color]]), _hoisted_12])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("textarea", {
     placeholder: "詳細を入力",
     name: "description",
-    "onUpdate:modelValue": _cache[11] || (_cache[11] = function ($event) {
+    "onUpdate:modelValue": _cache[12] || (_cache[12] = function ($event) {
       return $data.newTask.description = $event;
     })
   }, null, 512

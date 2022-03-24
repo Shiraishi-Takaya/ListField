@@ -32,10 +32,13 @@ class TaskFactory extends Factory
             'user_id' => User::factory(),
             'title' => $this->faker->randomElement($taskName),
             'description' => '詳細詳細詳細',
-            'deadline' => $this->faker->dateTimeBetween('-1 week', 'now'),
+            'date' => $this->faker->dateTimeBetween('-1 week', 'now'),
+            'time' => $this->faker->time(),
             'is_done' => false,
-            'width' => 240,
-            'height' => 240,
+            'x_position' => 0,
+            'y_position' => 2,
+            'width' => 4,
+            'height' => 4,
             'color' => 0
         ];
     }
