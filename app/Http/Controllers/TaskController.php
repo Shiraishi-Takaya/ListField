@@ -25,10 +25,11 @@ class TaskController extends Controller
         $task->date = $request->date;
         $task->time = $request->time;
         $task->is_done = false;
-        $task->x_position = 0;
-        $task->y_position = 0;
-        $task->width = 4;
-        $task->height = 4;
+        $task->x = 0;
+        $task->y = 0;
+        $task->w = 4;
+        $task->h = 4;
+        $task->i = $request->title;
         $task->color = $request->color;
         $task->save();
 

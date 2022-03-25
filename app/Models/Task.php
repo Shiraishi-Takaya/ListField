@@ -18,10 +18,11 @@ class Task extends Model
         'date',
         'time',
         'is_done',
-        'x_position',
-        'y_position',
-        'width',
-        'height',
+        'x',
+        'y',
+        'w',
+        'h',
+        'i',
         'color'
     ];
 

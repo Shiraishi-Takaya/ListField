@@ -21,10 +21,11 @@ class CreateTasksTable extends Migration
             $table->date('date')->nullable;
             $table->time('time')->nullable;
             $table->boolean('is_done');
-            $table->integer('x_position');
-            $table->integer('y_position');
-            $table->integer('width');
-            $table->integer('height');
+            $table->integer('x');
+            $table->integer('y');
+            $table->integer('w');
+            $table->integer('h');
+            $table->string('i');
             $table->integer('color');
             $table->timestamps();
 

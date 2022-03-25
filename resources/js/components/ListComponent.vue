@@ -1,12 +1,4 @@
 <template>
-    <div>
-        <ul class="task-list">
-            <li v-for="task in tasks" :key="task">
-                {{ task }}
-            </li>
-        </ul>
-    </div>
-    <hr>
     <grid-layout
         v-model:layout="layout"
         :col-num="32"
@@ -68,12 +60,7 @@ export default {
                 time: '',
                 color: ''
             },
-            layout: [
-                { x: 0, y: 0, w: 2, h: 2, i: "0" },
-                { x: 0, y: 0, w: 2, h: 2, i: "1" },
-                { x: 0, y: 0, w: 2, h: 2, i: "2" },
-                { x: 0, y: 0, w: 2, h: 2, i: "3" },
-            ]
+            layout: []
         }
     },
     methods: {
@@ -82,6 +69,11 @@ export default {
                 console.log(res.data);
             });
         }
+    },
+    mounted() {
+        this.tasks.forEach(task => {
+            this.layout.push(task);
+        });
     }
 }
 </script>

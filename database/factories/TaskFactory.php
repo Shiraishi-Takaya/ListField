@@ -28,17 +28,20 @@ class TaskFactory extends Factory
             'タイムカード押すの忘れない'
         ];
 
+        $selectedName = $this->faker->randomElement($taskName);
+
         return [
             'user_id' => User::factory(),
-            'title' => $this->faker->randomElement($taskName),
+            'title' => $selectedName,
             'description' => '詳細詳細詳細',
             'date' => $this->faker->dateTimeBetween('-1 week', 'now'),
             'time' => $this->faker->time(),
             'is_done' => false,
-            'x_position' => 0,
-            'y_position' => 2,
-            'width' => 4,
-            'height' => 4,
+            'x' => 0,
+            'y' => 2,
+            'w' => 4,
+            'h' => 4,
+            'i' => $selectedName,
             'color' => 0
         ];
     }
