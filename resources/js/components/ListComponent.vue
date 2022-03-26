@@ -1,5 +1,6 @@
 <template>
     <grid-layout
+        id="grid-layout"
         v-model:layout="layout"
         :col-num="32"
         :row-height="32"
@@ -8,6 +9,7 @@
         :is-mirrored="false"
         :vertical-compact="true"
         :margin="[10, 10]"
+        :prevent-collosion="false"
         :use-css-transforms="true"
     >
         <grid-item
@@ -58,15 +60,21 @@ export default {
                 description: '',
                 date: '',
                 time: '',
-                color: ''
+                color: '',
+                x: '',
+                y: ''
             },
             layout: []
         }
     },
     methods: {
         create() {
+            this.newTask.x = (this.layout.length * 2) % 32;
+            this.newTask.y = this.layout.length + 32;
+
             axios.post('api/tasks/create', this.newTask).then(res => {
-                console.log(res.data);
+                this.layout.push(res.data);
+                console.log(this.layout);
             });
         }
     },
@@ -74,6 +82,7 @@ export default {
         this.tasks.forEach(task => {
             this.layout.push(task);
         });
+        console.log(this.layout);
     }
 }
 </script>

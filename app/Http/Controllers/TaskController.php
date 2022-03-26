@@ -25,15 +25,15 @@ class TaskController extends Controller
         $task->date = $request->date;
         $task->time = $request->time;
         $task->is_done = false;
-        $task->x = 0;
-        $task->y = 0;
+        $task->x = $request->x;
+        $task->y = $request->y;
         $task->w = 4;
         $task->h = 4;
         $task->i = $request->title;
         $task->color = $request->color;
         $task->save();
 
-        $data = User::find(1)->tasks;
+        $data = User::find(1)->tasks()->latest()->first();
         return $data;
     }
 }

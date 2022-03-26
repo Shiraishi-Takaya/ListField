@@ -19283,24 +19283,34 @@ __webpack_require__.r(__webpack_exports__);
         description: '',
         date: '',
         time: '',
-        color: ''
+        color: '',
+        x: '',
+        y: ''
       },
-      layout: []
+      layout: [],
+      colNum: 32
     };
   },
   methods: {
     create: function create() {
+      var _this = this;
+
+      this.newTask.x = this.layout.length * 2 % this.colNum;
+      this.newTask.y = this.layout.length + this.colNum;
       axios__WEBPACK_IMPORTED_MODULE_0___default().post('api/tasks/create', this.newTask).then(function (res) {
-        console.log(res.data);
+        _this.layout.push(res.data);
+
+        console.log(_this.layout);
       });
     }
   },
   mounted: function mounted() {
-    var _this = this;
+    var _this2 = this;
 
     this.tasks.forEach(function (task) {
-      _this.layout.push(task);
+      _this2.layout.push(task);
     });
+    console.log(this.layout);
   }
 });
 
@@ -19364,17 +19374,19 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_grid_layout = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("grid-layout");
 
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_grid_layout, {
+    id: "grid-layout",
     layout: $data.layout,
     "onUpdate:layout": _cache[0] || (_cache[0] = function ($event) {
       return $data.layout = $event;
     }),
-    "col-num": 32,
+    "col-num": $data.colNum,
     "row-height": 32,
     "is-draggable": true,
     "is-resizable": true,
     "is-mirrored": false,
     "vertical-compact": true,
     margin: [10, 10],
+    "prevent-collosion": false,
     "use-css-transforms": true
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
@@ -19407,7 +19419,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   }, 8
   /* PROPS */
-  , ["layout"]), _hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
+  , ["layout", "col-num"]), _hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
     onSubmit: _cache[13] || (_cache[13] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
       return $options.create && $options.create.apply($options, arguments);
     }, ["prevent"]))
