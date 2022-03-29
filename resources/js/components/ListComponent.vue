@@ -6,7 +6,6 @@
         :row-height="32"
         :is-draggable="true"
         :is-resizable="true"
-        :is-mirrored="false"
         :vertical-compact="true"
         :margin="[10, 10]"
         :prevent-collosion="false"
@@ -21,7 +20,7 @@
             :i="item.i"
             :key="item.i"
         >
-            {{ item.i }}
+            {{ item.title }}
         </grid-item>
     </grid-layout>
     <hr>
@@ -61,7 +60,6 @@ export default {
                 date: '',
                 time: '',
                 color: '',
-                x: '',
                 y: ''
             },
             layout: []
@@ -69,11 +67,12 @@ export default {
     },
     methods: {
         create() {
-            this.newTask.x = (this.layout.length * 2) % 32;
-            this.newTask.y = this.layout.length + 32;
+            let layoutHeight = document.getElementById('grid-layout').clientHeight;
+            this.newTask.y = (layoutHeight - 10) / 42;
 
             axios.post('api/tasks/create', this.newTask).then(res => {
                 this.layout.push(res.data);
+                window.dispatchEvent(new Event("resize"));
                 console.log(this.layout);
             });
         }

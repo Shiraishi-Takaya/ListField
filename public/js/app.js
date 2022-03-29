@@ -19284,22 +19284,21 @@ __webpack_require__.r(__webpack_exports__);
         date: '',
         time: '',
         color: '',
-        x: '',
         y: ''
       },
-      layout: [],
-      colNum: 32
+      layout: []
     };
   },
   methods: {
     create: function create() {
       var _this = this;
 
-      this.newTask.x = this.layout.length * 2 % this.colNum;
-      this.newTask.y = this.layout.length + this.colNum;
+      var layoutHeight = document.getElementById('grid-layout').clientHeight;
+      this.newTask.y = (layoutHeight - 10) / 42;
       axios__WEBPACK_IMPORTED_MODULE_0___default().post('api/tasks/create', this.newTask).then(function (res) {
         _this.layout.push(res.data);
 
+        window.dispatchEvent(new Event("resize"));
         console.log(_this.layout);
       });
     }
@@ -19379,11 +19378,10 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "onUpdate:layout": _cache[0] || (_cache[0] = function ($event) {
       return $data.layout = $event;
     }),
-    "col-num": $data.colNum,
+    "col-num": 32,
     "row-height": 32,
     "is-draggable": true,
     "is-resizable": true,
-    "is-mirrored": false,
     "vertical-compact": true,
     margin: [10, 10],
     "prevent-collosion": false,
@@ -19400,7 +19398,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           key: item.i
         }, {
           "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-            return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.i), 1
+            return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.title), 1
             /* TEXT */
             )];
           }),
@@ -19419,7 +19417,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   }, 8
   /* PROPS */
-  , ["layout", "col-num"]), _hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
+  , ["layout"]), _hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
     onSubmit: _cache[13] || (_cache[13] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
       return $options.create && $options.create.apply($options, arguments);
     }, ["prevent"]))
