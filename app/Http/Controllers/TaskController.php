@@ -37,7 +37,7 @@ class TaskController extends Controller
         $task->y = $request->y;
         $task->w = 4;
         $task->h = 4;
-        $task->i = 0;
+        $task->i = $newId;
         $task->color = $request->color;
         $task->save();
 
