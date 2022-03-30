@@ -21,3 +21,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post('/tasks/create', [TaskController::class, 'create']);
+
+Route::patch('/tasks/move', [TaskController::class, 'move']);

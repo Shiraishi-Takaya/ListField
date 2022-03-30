@@ -19286,6 +19286,11 @@ __webpack_require__.r(__webpack_exports__);
         color: '',
         y: ''
       },
+      newPosition: {
+        target: '',
+        x: '',
+        y: ''
+      },
       layout: []
     };
   },
@@ -19300,6 +19305,15 @@ __webpack_require__.r(__webpack_exports__);
 
         window.dispatchEvent(new Event("resize"));
         console.log(_this.layout);
+      });
+    },
+    moved: function moved(i, newX, newY) {
+      console.log("".concat(i, ",").concat(newX, ",").concat(newY));
+      this.newPosition.target = i;
+      this.newPosition.x = newX;
+      this.newPosition.y = newY;
+      axios__WEBPACK_IMPORTED_MODULE_0___default().patch('api/tasks/move', this.newPosition).then(function (res) {
+        console.log(res.data);
       });
     }
   },
@@ -19395,7 +19409,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           w: item.w,
           h: item.h,
           i: item.i,
-          key: item.i
+          key: item.i,
+          onMoved: $options.moved
         }, {
           "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
             return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.title), 1
@@ -19407,7 +19422,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
         }, 1032
         /* PROPS, DYNAMIC_SLOTS */
-        , ["x", "y", "w", "h", "i"]);
+        , ["x", "y", "w", "h", "i", "onMoved"]);
       }), 128
       /* KEYED_FRAGMENT */
       ))];

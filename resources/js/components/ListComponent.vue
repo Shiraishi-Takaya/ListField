@@ -19,6 +19,7 @@
             :h="item.h"
             :i="item.i"
             :key="item.i"
+            @moved="moved"
         >
             {{ item.title }}
         </grid-item>
@@ -62,6 +63,11 @@ export default {
                 color: '',
                 y: ''
             },
+            newPosition: {
+                target: '',
+                x: '',
+                y: ''
+            },
             layout: []
         }
     },
@@ -74,6 +80,15 @@ export default {
                 this.layout.push(res.data);
                 window.dispatchEvent(new Event("resize"));
                 console.log(this.layout);
+            });
+        },
+        moved(i, newX, newY) {
+            this.newPosition.target = i;
+            this.newPosition.x = newX;
+            this.newPosition.y = newY;
+
+            axios.patch('api/tasks/move', this.newPosition).then(res => {
+                console.log(res.data);
             });
         }
     },

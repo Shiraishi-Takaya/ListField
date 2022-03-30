@@ -44,4 +44,17 @@ class TaskController extends Controller
         $data = $task;
         return $data;
     }
+
+    public function move(Request $request)
+    {
+        $tasks = User::find(1)->tasks();
+        $task = $tasks->find($request->target);
+
+        $task->x = $request->x;
+        $task->y = $request->y;
+        $task->save();
+
+        $data = $task;
+        return $data;
+    }
 }
