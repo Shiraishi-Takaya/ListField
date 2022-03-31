@@ -19291,6 +19291,11 @@ __webpack_require__.r(__webpack_exports__);
         x: '',
         y: ''
       },
+      // newSize: {
+      //     target: '',
+      //     w: '',
+      //     h: ''
+      // },
       layout: []
     };
   },
@@ -19308,14 +19313,19 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     moved: function moved(i, newX, newY) {
-      console.log("".concat(i, ",").concat(newX, ",").concat(newY));
       this.newPosition.target = i;
       this.newPosition.x = newX;
       this.newPosition.y = newY;
       axios__WEBPACK_IMPORTED_MODULE_0___default().patch('api/tasks/move', this.newPosition).then(function (res) {
         console.log(res.data);
       });
-    }
+    } // resized(i, newH, newW) {
+    //     this.newSize.target = i;
+    //     this.newSize.h = newH;
+    //     this.newSize.w = newW;
+    //     console.log(this.newSize);
+    // }
+
   },
   mounted: function mounted() {
     var _this2 = this;

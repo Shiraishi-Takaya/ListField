@@ -18,13 +18,13 @@ class TaskController extends Controller
 
     public function create(Request $request)
     {
-        $newId;
-        $lastTask = User::find(1)->tasks()->latest()->first();
-        if ($lastTask != null) {
-            $newId = $lastTask->id + 1;
-        } else {
-            $newId = 1;
-        }
+        // $newId;
+        // $lastTask = User::find(1)->tasks()->latest()->first();
+        // if ($lastTask != null) {
+        //     $newId = $lastTask->id + 1;
+        // } else {
+        //     $newId = 1;
+        // }
 
         $task = new Task();
         $task->user_id = 1;
@@ -37,8 +37,10 @@ class TaskController extends Controller
         $task->y = $request->y;
         $task->w = 4;
         $task->h = 4;
-        $task->i = $newId;
+        $task->i = 0;
         $task->color = $request->color;
+        $task->save();
+        $task->i = $task->id;
         $task->save();
 
         $data = $task;
