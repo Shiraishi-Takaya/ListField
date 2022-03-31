@@ -59,4 +59,17 @@ class TaskController extends Controller
         $data = $task;
         return $data;
     }
+
+    public function resize(Request $request)
+    {
+        $tasks = User::find(1)->tasks();
+        $task = $tasks->find($request->target);
+
+        $task->w = $request->w;
+        $task->h = $request->h;
+        $task->save();
+
+        $data = $task;
+        return $data;
+    }
 }

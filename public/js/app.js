@@ -19291,11 +19291,11 @@ __webpack_require__.r(__webpack_exports__);
         x: '',
         y: ''
       },
-      // newSize: {
-      //     target: '',
-      //     w: '',
-      //     h: ''
-      // },
+      newSize: {
+        target: '',
+        w: '',
+        h: ''
+      },
       layout: []
     };
   },
@@ -19313,25 +19313,33 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     moved: function moved(i, newX, newY) {
+      var _this2 = this;
+
       this.newPosition.target = i;
       this.newPosition.x = newX;
       this.newPosition.y = newY;
       axios__WEBPACK_IMPORTED_MODULE_0___default().patch('api/tasks/move', this.newPosition).then(function (res) {
         console.log(res.data);
+        console.log(_this2.layout);
       });
-    } // resized(i, newH, newW) {
-    //     this.newSize.target = i;
-    //     this.newSize.h = newH;
-    //     this.newSize.w = newW;
-    //     console.log(this.newSize);
-    // }
+    },
+    resized: function resized(i, newH, newW) {
+      var _this3 = this;
 
+      this.newSize.target = i;
+      this.newSize.h = newH;
+      this.newSize.w = newW;
+      axios__WEBPACK_IMPORTED_MODULE_0___default().patch('api/tasks/resize', this.newSize).then(function (res) {
+        console.log(res.data);
+        console.log(_this3.layout);
+      });
+    }
   },
   mounted: function mounted() {
-    var _this2 = this;
+    var _this4 = this;
 
     this.tasks.forEach(function (task) {
-      _this2.layout.push(task);
+      _this4.layout.push(task);
     });
     console.log(this.layout);
   }
@@ -19420,7 +19428,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           h: item.h,
           i: item.i,
           key: item.i,
-          onMoved: $options.moved
+          onMoved: $options.moved,
+          onResized: $options.resized
         }, {
           "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
             return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)((0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(item.title), 1
@@ -19432,7 +19441,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
         }, 1032
         /* PROPS, DYNAMIC_SLOTS */
-        , ["x", "y", "w", "h", "i", "onMoved"]);
+        , ["x", "y", "w", "h", "i", "onMoved", "onResized"]);
       }), 128
       /* KEYED_FRAGMENT */
       ))];

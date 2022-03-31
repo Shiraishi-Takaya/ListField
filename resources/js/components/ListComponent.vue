@@ -20,6 +20,7 @@
             :i="item.i"
             :key="item.i"
             @moved="moved"
+            @resized="resized"
         >
             {{ item.title }}
         </grid-item>
@@ -68,6 +69,11 @@ export default {
                 x: '',
                 y: ''
             },
+            newSize: {
+                target: '',
+                w: '',
+                h: ''
+            },
             layout: []
         }
     },
@@ -88,7 +94,16 @@ export default {
             this.newPosition.y = newY;
 
             axios.patch('api/tasks/move', this.newPosition).then(res => {
-                console.log(res.data);
+                console.log(this.layout);
+            });
+        },
+        resized(i, newH, newW) {
+            this.newSize.target = i;
+            this.newSize.h = newH;
+            this.newSize.w = newW;
+
+            axios.patch('api/tasks/resize', this.newSize).then(res => {
+                console.log(this.layout);
             });
         }
     },
