@@ -19391,21 +19391,21 @@ var _hoisted_6 = /*#__PURE__*/_withScopeId(function () {
   );
 });
 
-var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("0");
+var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("red");
 
-var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("1");
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("pink");
 
-var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("2");
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("yellow");
 
-var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("3");
+var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("green");
 
-var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("4");
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("lightblue");
 
-var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("5");
+var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("blue");
 
-var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("6");
+var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("purple");
 
-var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("7");
+var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("gray");
 
 var _hoisted_15 = /*#__PURE__*/_withScopeId(function () {
   return /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", null, "保存", -1
@@ -19442,6 +19442,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           h: item.h,
           i: item.i,
           key: item.i,
+          "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)(item.color),
           onMoved: $options.moved,
           onResized: $options.resized
         }, {
@@ -19459,7 +19460,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
         }, 1032
         /* PROPS, DYNAMIC_SLOTS */
-        , ["x", "y", "w", "h", "i", "onMoved", "onResized"]);
+        , ["x", "y", "w", "h", "i", "class", "onMoved", "onResized"]);
       }), 128
       /* KEYED_FRAGMENT */
       ))];
@@ -19501,7 +19502,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.newTask.time]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "radio",
     name: "color",
-    value: "0",
+    value: "red",
     "onUpdate:modelValue": _cache[4] || (_cache[4] = function ($event) {
       return $data.newTask.color = $event;
     })
@@ -19510,7 +19511,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelRadio, $data.newTask.color]]), _hoisted_7]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "radio",
     name: "color",
-    value: "1",
+    value: "pink",
     "onUpdate:modelValue": _cache[5] || (_cache[5] = function ($event) {
       return $data.newTask.color = $event;
     })
@@ -19519,7 +19520,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelRadio, $data.newTask.color]]), _hoisted_8]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "radio",
     name: "color",
-    value: "2",
+    value: "yellow",
     "onUpdate:modelValue": _cache[6] || (_cache[6] = function ($event) {
       return $data.newTask.color = $event;
     })
@@ -19528,7 +19529,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelRadio, $data.newTask.color]]), _hoisted_9]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "radio",
     name: "color",
-    value: "3",
+    value: "green",
     "onUpdate:modelValue": _cache[7] || (_cache[7] = function ($event) {
       return $data.newTask.color = $event;
     })
@@ -19537,7 +19538,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelRadio, $data.newTask.color]]), _hoisted_10]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "radio",
     name: "color",
-    value: "4",
+    value: "lightblue",
     "onUpdate:modelValue": _cache[8] || (_cache[8] = function ($event) {
       return $data.newTask.color = $event;
     })
@@ -19546,7 +19547,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelRadio, $data.newTask.color]]), _hoisted_11]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "radio",
     name: "color",
-    value: "5",
+    value: "blue",
     "onUpdate:modelValue": _cache[9] || (_cache[9] = function ($event) {
       return $data.newTask.color = $event;
     })
@@ -19555,7 +19556,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelRadio, $data.newTask.color]]), _hoisted_12]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "radio",
     name: "color",
-    value: "6",
+    value: "purple",
     "onUpdate:modelValue": _cache[10] || (_cache[10] = function ($event) {
       return $data.newTask.color = $event;
     })
@@ -19564,7 +19565,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelRadio, $data.newTask.color]]), _hoisted_13]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "radio",
     name: "color",
-    value: "7",
+    value: "gray",
     "onUpdate:modelValue": _cache[11] || (_cache[11] = function ($event) {
       return $data.newTask.color = $event;
     })
@@ -19663,7 +19664,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.vue-grid-layout[data-v-6ee53bb8] {\n    background: #fff;\n}\n.vue-grid-item[data-v-6ee53bb8]:not(.vue-grid-placeholder) {\n    border-radius: 4px;\n    padding: 8px;\n    background: #e67c73;\n}\n.vue-grid-item .resizing[data-v-6ee53bb8] {\n    opacity: 0.9;\n}\n.vue-grid-item .static[data-v-6ee53bb8] {\n    background: #000;\n}\n/* .vue-grid-item .text {\n    font-size: 24px;\n    height: 100%;\n    width: 100%;\n    color: #fff;\n} */\n.vue-grid-item .no-drag[data-v-6ee53bb8] {\n    height: 100%;\n    width: 100%;\n}\n.vue-grid-item .minMax[data-v-6ee53bb8] {\n    font-size: 12px;\n}\n.vue-grid-item .add[data-v-6ee53bb8] {\n    cursor: pointer;\n}\n/* .vue-draggable-handle {\n    position: absolute;\n    width: 20px;\n    height: 20px;\n    top: 0;\n    left: 0;\n    background: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'><circle cx='5' cy='5' r='5' fill='#999999'/></svg>\")\n        no-repeat;\n    background-position: bottom right;\n    padding: 0 8px 8px 0;\n    background-repeat: no-repeat;\n    background-origin: content-box;\n    box-sizing: border-box;\n    cursor: pointer;\n} */\n.flex[data-v-6ee53bb8] {\n    display: flex;\n}\n.item-inner[data-v-6ee53bb8] {\n    position: relative;\n    width: 100%;\n    height: 100%;\n    color: #fff;\n}\n.item-inner[data-v-6ee53bb8]::after {\n    content: \"\";\n    position: absolute;\n    right: -8px;\n    bottom: -8px;\n    width: 16px;\n    height: 16px;\n    border-top: 8px solid transparent;\n    border-right: 8px solid #000;\n    border-bottom: 8px solid #000;\n    border-left: 8px solid transparent;\n    z-index: 0;\n    pointer-events: none;\n}\n.item-inner .item-datetime[data-v-6ee53bb8] {\n    display: flex;\n    margin-bottom: 6px;\n    font-size: 14px;\n}\n.item-inner .item-datetime p[data-v-6ee53bb8]:first-child {\n    margin-right: 8px;\n}\n.item-inner .item-title[data-v-6ee53bb8] {\n    font-size: 18px;\n}\n.item-inner .check[data-v-6ee53bb8] {\n    position: absolute;\n    top: 0;\n    right: 0;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.vue-grid-layout[data-v-6ee53bb8] {\n    background: #fff;\n}\n.vue-grid-item[data-v-6ee53bb8]:not(.vue-grid-placeholder) {\n    border-radius: 4px;\n    padding: 8px;\n}\n.vue-grid-item .resizing[data-v-6ee53bb8] {\n    opacity: 0.9;\n}\n.vue-grid-item .static[data-v-6ee53bb8] {\n    background: #000;\n}\n/* .vue-grid-item .text {\n    font-size: 24px;\n    height: 100%;\n    width: 100%;\n    color: #fff;\n} */\n.vue-grid-item .no-drag[data-v-6ee53bb8] {\n    height: 100%;\n    width: 100%;\n}\n.vue-grid-item .minMax[data-v-6ee53bb8] {\n    font-size: 12px;\n}\n.vue-grid-item .add[data-v-6ee53bb8] {\n    cursor: pointer;\n}\n/* .vue-draggable-handle {\n    position: absolute;\n    width: 20px;\n    height: 20px;\n    top: 0;\n    left: 0;\n    background: url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10'><circle cx='5' cy='5' r='5' fill='#999999'/></svg>\")\n        no-repeat;\n    background-position: bottom right;\n    padding: 0 8px 8px 0;\n    background-repeat: no-repeat;\n    background-origin: content-box;\n    box-sizing: border-box;\n    cursor: pointer;\n} */\n.flex[data-v-6ee53bb8] {\n    display: flex;\n}\n.item-inner[data-v-6ee53bb8] {\n    position: relative;\n    width: 100%;\n    height: 100%;\n    color: #fff;\n}\n.item-inner[data-v-6ee53bb8]::after {\n    content: \"\";\n    position: absolute;\n    right: -8px;\n    bottom: -8px;\n    width: 16px;\n    height: 16px;\n    border-top: 8px solid transparent;\n    border-right: 8px solid #000;\n    border-bottom: 8px solid #000;\n    border-left: 8px solid transparent;\n    z-index: 0;\n    pointer-events: none;\n}\n.item-inner .item-datetime[data-v-6ee53bb8] {\n    display: flex;\n    margin-bottom: 6px;\n    font-size: 14px;\n}\n.item-inner .item-datetime p[data-v-6ee53bb8]:first-child {\n    margin-right: 8px;\n}\n.item-inner .item-title[data-v-6ee53bb8] {\n    font-size: 18px;\n}\n.item-inner .check[data-v-6ee53bb8] {\n    position: absolute;\n    top: 0;\n    right: 0;\n}\n.red[data-v-6ee53bb8] {\n    background: #d50000;\n}\n.pink[data-v-6ee53bb8] {\n    background: #e67c73;\n}\n.yellow[data-v-6ee53bb8] {\n    background: #f6bf26;\n}\n.green[data-v-6ee53bb8] {\n    background: #0b8043;\n}\n.lightblue[data-v-6ee53bb8] {\n    background: #039be5;\n}\n.blue[data-v-6ee53bb8] {\n    background: #3f51b5;\n}\n.purple[data-v-6ee53bb8] {\n    background: #be24aa;\n}\n.gray[data-v-6ee53bb8] {\n    background: #616161;\n}\n.done[data-v-6ee53bb8] {\n    background: #cccccc;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

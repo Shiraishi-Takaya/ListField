@@ -26,7 +26,7 @@ class CreateTasksTable extends Migration
             $table->integer('w');
             $table->integer('h');
             $table->string('i');
-            $table->integer('color');
+            $table->string('color');
             $table->timestamps();
 
             $table->foreign('user_id')

@@ -42,7 +42,7 @@ class TaskFactory extends Factory
             'w' => 4,
             'h' => 4,
             'i' => $selectedName,
-            'color' => 0
+            'color' => 'red'
         ];
     }
 }

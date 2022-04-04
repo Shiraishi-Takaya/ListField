@@ -19,6 +19,7 @@
             :h="item.h"
             :i="item.i"
             :key="item.i"
+            :class="item.color"
             @moved="moved"
             @resized="resized"
         >
@@ -39,14 +40,14 @@
             <input type="date" name="date" v-model="newTask.date">
             <input type="time" name="time" v-model="newTask.time">
             <div>
-                <label><input type="radio" name="color" value="0" v-model="newTask.color">0</label>
-                <label><input type="radio" name="color" value="1" v-model="newTask.color">1</label>
-                <label><input type="radio" name="color" value="2" v-model="newTask.color">2</label>
-                <label><input type="radio" name="color" value="3" v-model="newTask.color">3</label>
-                <label><input type="radio" name="color" value="4" v-model="newTask.color">4</label>
-                <label><input type="radio" name="color" value="5" v-model="newTask.color">5</label>
-                <label><input type="radio" name="color" value="6" v-model="newTask.color">6</label>
-                <label><input type="radio" name="color" value="7" v-model="newTask.color">7</label>
+                <label><input type="radio" name="color" value="red" v-model="newTask.color">red</label>
+                <label><input type="radio" name="color" value="pink" v-model="newTask.color">pink</label>
+                <label><input type="radio" name="color" value="yellow" v-model="newTask.color">yellow</label>
+                <label><input type="radio" name="color" value="green" v-model="newTask.color">green</label>
+                <label><input type="radio" name="color" value="lightblue" v-model="newTask.color">lightblue</label>
+                <label><input type="radio" name="color" value="blue" v-model="newTask.color">blue</label>
+                <label><input type="radio" name="color" value="purple" v-model="newTask.color">purple</label>
+                <label><input type="radio" name="color" value="gray" v-model="newTask.color">gray</label>
             </div>
             <textarea placeholder="詳細を入力" name="description" v-model="newTask.description"></textarea>
             <button>保存</button>
@@ -129,7 +130,6 @@ export default {
 .vue-grid-item:not(.vue-grid-placeholder) {
     border-radius: 4px;
     padding: 8px;
-    background: #e67c73;
 }
 .vue-grid-item .resizing {
     opacity: 0.9;
@@ -206,5 +206,32 @@ export default {
     position: absolute;
     top: 0;
     right: 0;
+}
+.red {
+    background: #d50000;
+}
+.pink {
+    background: #e67c73;
+}
+.yellow {
+    background: #f6bf26;
+}
+.green {
+    background: #0b8043;
+}
+.lightblue {
+    background: #039be5;
+}
+.blue {
+    background: #3f51b5;
+}
+.purple {
+    background: #be24aa;
+}
+.gray {
+    background: #616161;
+}
+.done {
+    background: #cccccc;
 }
 </style>
