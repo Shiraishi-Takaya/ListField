@@ -24,7 +24,7 @@
         >
             <div class="item-inner">
                 <div class="item-datetime">
-                    <p>{{ item.date.slice(5).replace(/-/g, '/').replace(/^0+/, '') }}</p>
+                    <p>{{ item.date.replace(/\-/g, '/').replace(/\/0/g, '/').slice(5) }}</p>
                     <p>{{ item.time.slice(0, -3) }}</p>
                 </div>
                 <div class="item-title">{{ item.title }}</div>
