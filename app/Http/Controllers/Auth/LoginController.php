@@ -18,11 +18,11 @@ class LoginController extends Controller
         ]);
 
         if(Auth::attempt($credentials)){
-            return response() -> json(
+            return response()->json(
                 ['status_code' => 200,'message' => 'success'], 200
             );
         } else {
-            return response() -> json(
+            return response()->json(
                 ['status_code' => 500,'message' => 'Unauthorized'], 200
             );
         }
@@ -31,7 +31,7 @@ class LoginController extends Controller
     public function logout()
     {
         Auth::logout();
-        return response() -> json(
+        return response()->json(
             ['status_code' => 200, 'message' => 'Logged out'], 200
         );
     }

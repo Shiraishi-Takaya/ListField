@@ -7,20 +7,7 @@
     <title>ListField</title>
 </head>
 <body>
-    {{-- ヘッダー --}}
-    <header>
-
-    </header>
-
-    {{-- メイン --}}
-    <main>
-        {{ $slot }}
-    </main>
-
-    {{-- フッター --}}
-    <footer>
-
-    </footer>
+    {{ $slot }}
 
     <script src="{{ url('js/app.js') }}"></script>
 </body>

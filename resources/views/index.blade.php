@@ -4,6 +4,6 @@
     </x-slot>
     <h1>ListField</h1>
     <div id="app">
-        <list-component></list-component>
+        <router-view></router-view>
     </div>
 </x-layout>

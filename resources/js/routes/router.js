@@ -1,15 +1,23 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import ListComponent from '../components/ListComponent.vue';
+import LoginComponent from '../components/LoginComponent.vue';
 
 const routes = [
+    {
+        path: '/',
+        name: 'login',
+        component: LoginComponent
+    },
 	{
-		path: '/',
+		path: '/list',
 		name: 'list',
 		component: ListComponent
 	}
 ];
 
-export default createRouter({
+const router = createRouter({
 	history: createWebHistory(),
 	routes
 });
+
+export default router;

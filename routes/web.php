@@ -15,7 +15,7 @@ use App\Http\Controllers\TaskController;
 |
 */
 
-Route::get('/{any}', function() {
+Route::get('{any}', function() {
     return view('index');
 }) -> where('any', '^(?!api).*$');
 // URLに「api」がつくものを除外
