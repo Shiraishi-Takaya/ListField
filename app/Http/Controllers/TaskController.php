@@ -8,12 +8,11 @@ use App\Models\Task;
 
 class TaskController extends Controller
 {
-    public function index()
+    public function show()
     {
-        $tasks = User::find(1)->tasks;
+        $data = User::find(1)->tasks;
 
-        return view('index')
-            -> with(['tasks' => $tasks]);
+        return $data;
     }
 
     public function create(Request $request)

@@ -19275,7 +19275,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ['tasks'],
   data: function data() {
     return {
       newTask: {
@@ -19336,8 +19335,12 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   mounted: function mounted() {
-    this.layout = this.tasks;
-    console.log(this.layout);
+    var _this4 = this;
+
+    axios__WEBPACK_IMPORTED_MODULE_0___default().get('api/tasks/show').then(function (res) {
+      console.log(res.data);
+      _this4.layout = res.data;
+    });
   }
 });
 

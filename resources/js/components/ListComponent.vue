@@ -59,9 +59,6 @@
 import axios from "axios"
 
 export default {
-    props: [
-        'tasks'
-    ],
     data() {
         return {
             newTask: {
@@ -72,19 +69,23 @@ export default {
                 color: '',
                 y: ''
             },
+
             newPosition: {
                 target: '',
                 x: '',
                 y: ''
             },
+
             newSize: {
                 target: '',
                 w: '',
                 h: ''
             },
+
             layout: []
         }
     },
+
     methods: {
         create() {
             let layoutHeight = document.getElementById('grid-layout').clientHeight;
@@ -97,6 +98,7 @@ export default {
                 console.log(this.layout);
             });
         },
+
         moved(i, newX, newY) {
             this.newPosition.target = i;
             this.newPosition.x = newX;
@@ -106,6 +108,7 @@ export default {
                 console.log(this.layout);
             });
         },
+
         resized(i, newH, newW) {
             this.newSize.target = i;
             this.newSize.h = newH;
@@ -116,9 +119,12 @@ export default {
             });
         }
     },
+
     mounted() {
-        this.layout = this.tasks;
-        console.log(this.layout);
+        axios.get('api/tasks/show').then(res => {
+            console.log(res.data);
+            this.layout = res.data;
+        });
     }
 }
 </script>
